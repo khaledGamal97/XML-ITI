@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Family SYSTEM "E:\ITI-BI-Track\7. XML\family.dtd">
+<Family>
+	<Grandfather> Khaled
+		<Father Job="Engineer"> Ahmed
+			<Mother>
+			</Mother>
+			<Daughter Age="22" Job="Doctor">
+			</Daughter>
+			<Son Age="25" Sport="Football">
+			</Son>
+		</Father>
+		<Uncle>
+		</Uncle>
+		<Uncle>
+		</Uncle>
+		<Aunt>
+		</Aunt>
+	</Grandfather>
+</Family>
