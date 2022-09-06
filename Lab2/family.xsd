@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="job">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Engineer"/>
+			<xs:enumeration value="Accountant"/>
+			<xs:enumeration value="Doctor"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sport">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Football"/>
+			<xs:enumeration value="Tennis"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Family">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Grandfather">
+					<xs:complexType mixed="true">
+						<xs:sequence>
+							<xs:element name="Father">
+								<xs:complexType mixed="true">
+									<xs:sequence>
+										<xs:element name="Mother"/>
+										<xs:element name="Daughter">
+											<xs:complexType>
+												<xs:attribute name="Age" type="xs:integer" use="required"/>
+												<xs:attribute name="Job" type="job" default="Engineer"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Son">
+											<xs:complexType>
+												<xs:attribute name="Age" type="xs:integer" use="required"/>
+												<xs:attribute name="Sport" type="sport" default="Football"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Job" type="job" default="Engineer"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Uncle" maxOccurs="4"/>
+							<xs:element name="Aunt" maxOccurs="2">
+								<xs:complexType>
+									<xs:attribute name="Sons" type="xs:integer" default="1" use="optional"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
